@@ -1,0 +1,16 @@
+
+<div class="card">
+    <img [src]="book.image" alt="book_image" class="card-img-top"/>
+    <div class="card-body">
+        <div class="m-1">
+            <span (click)="DetailedPage(book)" class="hoverOver">
+                {{book.title}}
+            </span></div>
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-secondary" (click)="AddWishlist(book)">Wishlist</button>
+        <button type="button" class="btn btn-warning m-1 text-white" (click)="AddCart(book)">Add to Cart</button>
+
+    </div>
+</div>
+

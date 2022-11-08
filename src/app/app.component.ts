@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'book';
+  navItems=[
+    {navLinkName:"Home",routeLink:""},
+    {navLinkName:"My Cart",routeLink:"cart"},
+    {navLinkName:"My Orders",routeLink:"orders"},
+    {navLinkName:"Wishlist",routeLink:"wishlist"},
+    {navLinkName:"Login/Register",routeLink:"register"},
+
+  ]
 }
+ 

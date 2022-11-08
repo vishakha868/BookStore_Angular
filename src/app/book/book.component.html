@@ -1,0 +1,24 @@
+<div class="row m-4">
+    <div class="col-sm-3">
+        <img [src]="singleBookData.image" alt="bookImage"/>
+    </div>
+    <div class="col-sm-9">
+        <h5>{{singleBookData.title}}</h5><br>
+        <h6>No. of Pages: 312</h6>
+        <h6></h6>
+        <h6>Isbn: {{singleBookData.isbn13}}</h6>
+        <div><h6>
+            Description:
+        </h6> {{singleBookData.subtitle}}
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, animi maxime! Aspernatur minus culpa eligendi dicta optio assumenda, totam voluptate quisquam alias repellat porro, reprehenderit cumque voluptas. Laborum, et impedit.
+                Doloribus vitae illo harum ipsum ullam similique quibusdam autem eos suscipit magni ipsa, tempora consequuntur perferendis quisquam corporis dolorem quos voluptatem obcaecati! Eaque temporibus numquam deserunt ullam sapiente excepturi quo!
+                Animi, unde suscipit optio tempore ea sit provident qui deserunt odit asperiores quae dicta? Nisi maiores error aspernatur. Labore, doloremque ipsam. Eum nostrum libero quae perferendis magni similique, error molestiae?
+            </p>
+        </div>
+        <div>
+            <button type="button" class="btn btn-warning text-white" (click)="AddToCart(singleBookData)">Add to Cart</button>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<form [formGroup]="customerRegister" (ngSubmit)="onsubmit()">
+  <div class="card border-secondary m-5">
+    <div class="card-header">
+      <div class="card-title align-center">Register</div>
+    </div>
+    <div class="card-body">
+      <div class="form-group row m-1">
+        <div class="col-sm-3">
+          <label for="firstName" class="form-label">First Name</label>
+        </div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            placeholder="First Name"
+            title="firstName"
+            formControlName="firstName"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': firstName.errors && firstName.touched }"
+          />
+        </div>
+      </div>
+      <div class="form-group row m-1">
+        <div class="col-sm-3">
+          <label for="lastName" class="form-label">Last Name</label>
+        </div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            placeholder="Last Name"
+            title="lastName"
+            formControlName="lastName"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': lastName.errors && lastName.touched }"
+          />
+        </div>
+      </div>
+      <div class="form-group row m-1">
+        <div class="col-sm-3">
+          <label for="password" class="form-label">Password</label>
+        </div>
+        <div class="col-sm-5">
+          <input
+            type="password"
+            placeholder="Enter the password"
+            title="password"
+            formControlName="password"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': password.errors && password.touched }"
+          />
+        </div>
+      </div>
+      <div class="form-group row m-1">
+        <div class="col-sm-3">
+          <label for="confirmPassword" class="form-label"
+            >Confirm Password</label
+          >
+        </div>
+        <div class="col-sm-5">
+          <input
+            type="password"
+            placeholder="Re-Enter the password"
+            title="confirmPassword"
+            formControlName="confirmPassword"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid': confPassword.errors && confPassword.touched
+            }"
+          />
+        </div>
+    
+      </div>
+      <div class="row">
+        <input
+            type="number"
+            maxlength="9"
+            placeholder="Enter the contact"
+            title="Number"
+            formControlName="phone"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': phone.errors &&(phone.touched || phone.dirty)}"
+          />
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="row m-1">
+        <button
+          type="button"
+          class="btn btn-primary col-sm-3"
+          (click)="onsubmit()"
+        >
+          Submit
+        </button>
+      </div>
+      <div class="row m-1">
+        <a class="nav-item nav-link" (click)="RouteToLogin()" class="hoverOver"
+          >Already a user? Login</a
+        >
+      </div>
+    </div>
+  </div>
+</form>

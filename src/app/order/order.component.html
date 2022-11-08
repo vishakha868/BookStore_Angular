@@ -1,0 +1,27 @@
+<div *ngIf="isOrder; else EmptyOrder">
+    <div *ngFor="let order of orders">
+        <div class="card" style="width:80%">
+            <div class="card-header">
+            <div class="float-left">
+                 Delivered
+            </div>
+            <div class="float-right">
+                26 oct 2022
+            </div>
+            </div>
+            <div class="card-body d-flex">
+                   <div><img [src]="order.image" alt="order_image"/></div>
+                   <div>
+                    <h6>{{order.title}}</h6>
+                    <div>{{order.price}}</div>
+                   </div>
+            </div>
+        </div>
+        </div>
+</div>
+
+
+<ng-template #EmptyOrder>
+    <h1 class="text-secondary text-center m-5">
+        There is not any previous order.
+</h1></ng-template>

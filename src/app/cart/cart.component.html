@@ -1,0 +1,142 @@
+<div class="container">
+  <div id="stepper1" class="bs-stepper">
+    <div class="bs-stepper-header">
+      <div class="step" data-target="#test1">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">1</span>
+          <span class="bs-stepper-label">Address</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test2">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">2</span>
+          <span class="bs-stepper-label">Order-Summary</span>
+        </button>
+      </div>
+    </div>
+    <div class="bs-stepper-container row">
+      <div #test1 class="col-sm-6">
+        <form>
+          <div class="row">
+            <label for="Name">Name<span class="text-danger">*</span></label>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <input
+                type="text"
+                placeholder="First Name"
+                class="form-control"
+                name="FirstName"
+                required
+              />
+            </div>
+            <div class="col-sm-6">
+              <input
+                type="text"
+                placeholder="Last Name"
+                class="form-control"
+                name="LastName"
+                required
+              />
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label for="contact"
+              >Phone No.<span class="text-danger">*</span></label
+            >
+          </div>
+          <div class="row mt-2">
+            <div class="col-sm-12">
+              <input
+                type="number"
+                placeholder="Phone Number"
+                class="form-control"
+                name="contact"
+                maxlength="10"
+              />
+            </div>
+          </div>
+          <div class="row mt-2">
+            <label class="form-label col-sm-4">State</label>
+            <label class="form-label col-sm-4">City</label>
+            <label class="form-label col-sm-4">Pincode</label>
+          </div>
+          <div class="row mt-2">
+            <div class="col-sm-4">
+              <input
+                type="text"
+                placeholder="state"
+                class="form-control"
+                name="state"
+              />
+            </div>
+            <div class="col-sm-4">
+              <input
+                type="text"
+                placeholder="city"
+                class="form-control"
+                name="city"
+              />
+            </div>
+            <div class="col-sm-4">
+              <input
+                type="number"
+                placeholder="pincode"
+                class="form-control"
+                name="pincode"
+                maxlength="6"
+              />
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <label for="landmark">
+              Landmark
+            </label>
+          </div>
+          <div class="row mt-2">
+            <div class="col-sm-12">
+              <input
+                type="text"
+                placeholder="Landmark"
+                class="form-control"
+                name="landmartk"
+                required
+              />
+            </div>
+          </div>
+            <button type="button" class="btn btn-primary mt-2" [disabled]="cart.length==0?true:false">Save</button>
+        </form>
+      </div>
+      <div #test2 class="col-sm-6" >
+        <div *ngIf="cart.length!=0; else showMessage">
+          <div *ngFor="let cartBook of cart">
+            <div class="card m-auto">
+              <div class="card-body">
+                <div>
+                  {{ cartBook.title }}
+                </div>
+                <div>
+                  {{ cartBook.price }}
+                </div>
+              </div>
+            </div>
+          </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="checkoutOrder(cart)"
+            >
+              Proceed To Checkout
+            </button>
+        </div>
+        <ng-template #showMessage>
+          <h3 class="text-secondary text-center mt-5">Your cart is empty.</h3>
+          <h6 class="text-center mb-0">Note: Please add something to cart to proceed further.</h6>
+        </ng-template>
+      </div>
+      
+    </div>
+  </div>
+</div>
